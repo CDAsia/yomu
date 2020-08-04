@@ -4,6 +4,8 @@ require 'net/http'
 require 'mime/types'
 require 'json'
 
+require 'time'
+
 require 'socket'
 require 'stringio'
 
@@ -163,7 +165,7 @@ class Yomu
 
   def creation_date
     return @creation_date if defined? @creation_date
- 
+
     if metadata['Creation-Date']
       @creation_date = Time.parse(metadata['Creation-Date'])
     else
